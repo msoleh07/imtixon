@@ -1,0 +1,166 @@
+.home_all_data_page {
+  width: 100%;
+}
+
+.home_container {
+  width: 100%;
+}
+
+.home_container .home_title {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.home_title h2 {
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home_title h2 a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  color: #2a8be7;
+}
+
+.home_title h2 a svg {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.home_container_card_border {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  justify-content: flex-start;
+}
+
+.home_container_card_border .card_container {
+  width: 200px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #c0bfbf;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 350px;
+  margin: 10px 3.3px;
+  position: relative;
+}
+
+.card_container .heart_btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.heart_btn svg {
+  font-size: 25px;
+}
+
+.card_container .card_img {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 15px 0;
+  box-shadow: 0 0 0, 0 0 0, 0 0 3px #c0bfbf, 0 0 0;
+}
+
+.card_container .card_img img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+.imgWidth {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card_title {
+  width: 100%;
+  padding: 0 3px;
+}
+
+.card_title span {
+  font-size: 12.5px;
+  color: #222;
+}
+
+.card_month_border {
+  width: 100%;
+  padding: 0 3px;
+}
+
+.card_month_border .month_title {
+  flex: 1;
+  height: 15px;
+  border-radius: 10px;
+  border: 1px solid #fdca48;
+  background: #feedc2;
+  font-size: 12.6px;
+  padding: 1px 5px;
+  color: #24272c;
+}
+
+.card_price_border {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 3px;
+}
+
+.card_price_border s {
+  text-decoration: line-through;
+  font-size: 12px;
+  color: #a5b1bb;
+}
+
+.card_price_border span {
+  color: #fb4444;
+  font-size: 14px;
+}
+
+.card_price_border .colorWhite {
+  color: #788998;
+  margin-bottom: 15px;
+}
+
+.card_btn_border {
+  width: 100%;
+  padding: 0 3px;
+}
+
+.card_btn_border button {
+  padding: 8px 13px;
+  border-radius: 5px;
+  border: none;
+  background: #fdbe1f;
+  color: #24272c;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.card_btn_border button:hover {
+  background: #f9cb58;
+}
+
+.card_btn_border button svg {
+  font-size: 20px;
+}

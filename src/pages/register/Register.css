@@ -1,0 +1,100 @@
+.register_page {
+  width: 100%;
+  height: 100vh;
+  background-color: #e4e8ea68;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -40px;
+  left: 0;
+}
+
+.form_container {
+  width: 400px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form_header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form_header h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.form_header button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.form_header button svg {
+  font-size: 25px;
+  color: #a5b1bb;
+}
+
+.form_container form {
+  display: grid;
+  grid-template-columns: repeat(1, 100%);
+  gap: 10px;
+}
+.form_container form .input_border {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.input_border label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.input_border input {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  text-indent: 10px;
+  border: 1px solid #a5b1bb;
+  outline-color: #fdbe1f;
+  font-size: 16px;
+}
+
+.form_container form button {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form_container form .cart_btn_one {
+  background: #fdbe1f;
+}
+
+.form_container form .cart_btn_one:hover {
+  background: #f8d680;
+}
+
+.form_container form .cart_btn_two {
+  box-shadow: 0 0 3px #000000;
+  background: #fff;
+}
+
+.form_container form .cart_btn_two:hover {
+  background: #f3f6f7;
+}

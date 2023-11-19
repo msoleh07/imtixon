@@ -1,0 +1,383 @@
+header {
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  gap: 15px;
+  z-index: 999;
+}
+
+.header_logo,
+.header_catalog_btn,
+.header_input_container,
+.header_shopping_container {
+  display: flex;
+  align-items: center;
+}
+
+/* .header_logo code */
+
+.header_logo a {
+  display: flex;
+  align-items: center;
+}
+
+.header_logo a img {
+  width: 50px;
+}
+
+.header_logo a p {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #000;
+  font-size: 19.5px;
+  gap: 5px;
+}
+
+.header_logo a p span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* .header_catalog_btn  code*/
+
+.header_catalog_btn {
+  position: relative;
+}
+
+.header_catalog_btn button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 45px;
+  padding: 0 13px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  background: #fdbe1f;
+}
+
+.header_catalog_btn button:hover {
+  background: #fbc847;
+}
+
+.header_catalog_btn button svg {
+  font-size: 22px;
+}
+/* menu code */
+
+.catalog_container {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background: #eaf8fa;
+  left: 0;
+  top: 80px;
+}
+
+.catlog_card_container {
+  width: 320px;
+  height: 100%;
+  background: #f5f7f7;
+  padding-left: 7%;
+  padding-top: 15px;
+}
+
+.ctalog_item {
+  width: 100%;
+  height: 40px;
+  border-radius: 6px 0 0 6px;
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  z-index: 999;
+}
+
+.ctalog_item:hover {
+  background: #fff;
+  cursor: pointer;
+  color: #fdbe1f;
+}
+
+.header_catalog_container_card {
+  width: calc(100% - 320px);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff;
+  display: none;
+}
+
+.ctalog_item:hover .header_catalog_container_card {
+  display: block;
+}
+
+.container_tatalog {
+  width: 100%;
+  height: 100%;
+  padding: 15px 0;
+  padding-right: 8%;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  gap: 1px;
+}
+
+.container_catalog_title_header {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 0 3px;
+}
+
+.container_catalog_title_header a h2 {
+  color: #000;
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+.container_catalog_title_header .padd {
+  padding-left: 40px;
+}
+
+.container_catalog_title_header a h2:hover {
+  color: #fdbe1f;
+}
+
+.container_catalog_cards_main {
+  width: 100%;
+  padding: 1px;
+}
+
+.container_catalog_cards_main ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.container_catalog_cards_main ul li {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+}
+
+.container_catalog_cards_main .padd {
+  padding-left: 40px;
+}
+
+.container_catalog_cards_main ul li a {
+  color: #000;
+  font-size: 13px;
+}
+
+.container_catalog_cards_main ul li a:hover {
+  color: #fdbe1f;
+}
+
+/* .header_input_container code */
+
+.header_input_container {
+  height: 45px;
+  background-color: #fdbe1f;
+  width: 640px;
+  padding: 1.5px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.header_input_container input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+  text-indent: 10px;
+  font-size: 14px;
+}
+
+.header_input_container button {
+  height: 100%;
+  width: 50px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.header_input_container button:hover {
+  background: #fbc847;
+}
+
+.header_input_container button svg {
+  font-size: 21px;
+}
+
+/* input search container */
+
+.search_container {
+  width: 640px;
+  height: 350px;
+  background: #fff;
+  position: absolute;
+  bottom: -337px;
+  left: 417px;
+  border-radius: 0 0 5px 5px;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  overflow-y: auto;
+}
+
+.search_scroll_bar {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search_scroll_bar .search_scroll_bar_ul_text {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.search_scroll_bar .search_scroll_bar_ul_text .search_scroll_bar_li_text {
+  width: 100%;
+  height: 35px;
+  background: #eee;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.search_scroll_bar .search_scroll_bar_ul_text .search_scroll_bar_li_text:hover {
+  background: #fbf9f9;
+}
+
+.search_scroll_bar .search_scroll_bar_ul_text .search_scroll_bar_li_text a {
+  color: #000;
+}
+
+/* header_shopping_container code */
+
+.header_shopping_container {
+  gap: 15px;
+}
+
+.header_shopping_container a {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  padding: 0 13px;
+}
+
+.header_shopping_container a svg {
+  font-size: 21px;
+  color: #000;
+}
+.header_shopping_container a:hover svg {
+  color: #fdbe1f;
+}
+
+.header_shopping_container a span {
+  font-size: 13px;
+  color: #5c5c5c;
+}
+
+.header_shopping_container button {
+  height: 45px;
+  padding: 0 13px;
+  border: 2px solid #fdbe1f;
+  border-radius: 5px;
+  background: #fff;
+  color: #000;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.header_shopping_container button:hover {
+  background: #fce9b9;
+}
+
+.header_bars {
+  display: none;
+}
+
+/* header_register_btn */
+
+/* madia */
+
+@media (max-width: 1435px) {
+  .header_input_container {
+    flex: 1;
+  }
+}
+
+@media (max-width: 1130px) {
+  .header_catalog_btn button {
+    flex: 1;
+    padding: 5px;
+  }
+  .header_input_container button svg,
+  .header_catalog_btn button svg,
+  .header_shopping_container a svg {
+    font-size: 18px;
+  }
+
+  .header_catalog_btn button {
+    font-size: 13px;
+  }
+  .header_catalog_btn button,
+  .header_input_container,
+  .header_shopping_container button {
+    height: 40px;
+  }
+}
+
+@media (max-width: 890px) {
+  .header_catalog_btn button,
+  .header_input_container {
+    display: none;
+  }
+  header {
+    justify-content: space-between;
+  }
+
+  .header_bars {
+    display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  .header_catalog_btn button svg,
+  .header_shopping_container a svg {
+    font-size: 16px;
+  }
+  .header_catalog_btn button,
+  .header_input_container,
+  .header_shopping_container button {
+    height: 35px;
+  }
+}
