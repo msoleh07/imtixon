@@ -150,7 +150,7 @@ function Header() {
           <span>Saralanganlar</span>
         </Link>
         <div className="header_register_btn">
-          {phone.length ? (
+          {phone?.length ? (
             <button>{phone}</button>
           ) : (
             <button onClick={() => setRegister(true)}>Kirish</button>
