@@ -199,6 +199,7 @@ header {
   align-items: center;
   overflow: hidden;
   position: relative;
+  flex: 1;
 }
 
 .header_input_container input {
@@ -380,4 +381,47 @@ header {
   .header_shopping_container button {
     height: 35px;
   }
+}
+
+.header_searchbar {
+  position: relative;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_searchbar input {
+  text-indent: 10px;
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  font-family: "Inter", sans-serif;
+}
+
+.header_searchbar > button {
+  padding: 0 25px;
+  height: 100%;
+  border: none;
+  background-color: #f8f8f8;
+  font-size: 20px;
+}
+
+.header_searchbar .searchResult {
+  width: 100%;
+  border-radius: 3px;
+  /* height: 200px; */
+  background-color: #fff;
+  box-shadow: 0 10px 10px #666;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 999;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
 }

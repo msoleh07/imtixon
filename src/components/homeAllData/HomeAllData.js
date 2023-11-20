@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./HomeAllData.css";
 import { FiShoppingCart } from "react-icons/fi";
 import { CiHeart } from "react-icons/ci";
@@ -6,10 +6,26 @@ import homeData from "../../app/homeAllData";
 import { Link } from "react-router-dom";
 
 function HomeAllData() {
+  const [btn, setBtn] = useState(false);
+  const [id, setId] = useState("");
+  const [count, setCount] = useState(1);
   const localStorage = (data) => {
     JSON.stringify(window.localStorage.setItem("data", data));
+    setBtn(true);
+    setId(data.id);
+  };
+  const countMinus = () => {
+    if ((count) => 0) {
+      setCount(count + 1);
+    }
+    setCount(count - 1);
   };
 
+  const countPlus = () => {
+    setCount(count + 1);
+  };
+
+  console.log(id);
   return (
     <div className="home_all_data_page">
       {homeData.map((item, index) => (
@@ -56,9 +72,17 @@ function HomeAllData() {
                   </span>
                 </div>
                 <div className="card_btn_border">
-                  <button onClick={() => localStorage(item)}>
-                    <FiShoppingCart /> <span>savatga</span>
-                  </button>
+                  {!btn ? (
+                    <button onClick={() => localStorage(item)}>
+                      <FiShoppingCart /> <span>savatga</span>
+                    </button>
+                  ) : (
+                    <div className="btn_cart_addet">
+                      <button onClick={countMinus}>-</button>
+                      <p>{count}</p>
+                      <button onClick={countPlus}>+</button>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

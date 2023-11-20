@@ -2,15 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBK1_9tKppJYCDdFJm6ZGYYdcuw0LVABN8",
-  authDomain: "register-2a973.firebaseapp.com",
-  projectId: "register-2a973",
-  storageBucket: "register-2a973.appspot.com",
-  messagingSenderId: "176953992346",
-  appId: "1:176953992346:web:a325de4eead17c1cea2b23",
-  measurementId: "G-BMKYB3BQFZ",
+  apiKey: "AIzaSyA4JV_IW1FGyzhqPSZWU3unSzMDDZi91tY",
+  authDomain: "adduser-b03cd.firebaseapp.com",
+  projectId: "adduser-b03cd",
+  storageBucket: "adduser-b03cd.appspot.com",
+  messagingSenderId: "29729753326",
+  appId: "1:29729753326:web:4c078bbe24ac0911d78bff",
+  measurementId: "G-9WB9H2WX7E",
 };
 
 const app = initializeApp(firebaseConfig);
-
-export const auth = getAuth(app);
+const auth = getAuth(app);
+export { app, auth };

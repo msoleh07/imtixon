@@ -14,6 +14,7 @@ function Header() {
   const [openMenu, setOpenMenu] = useState(false);
   const [register, setRegister] = useState(false);
   const [bars, setBars] = useState(false);
+  let phone = window.localStorage.getItem("phone");
   const inputData = homeData.filter((i) =>
     i.card.filter((x) => x.type === value)
   );
@@ -26,6 +27,7 @@ function Header() {
   register
     ? (document.body.style.overflow = "hidden")
     : (document.body.style.overflow = "auto");
+
   return (
     <header>
       <div className="header_logo">
@@ -148,11 +150,16 @@ function Header() {
           <span>Saralanganlar</span>
         </Link>
         <div className="header_register_btn">
-          <button onClick={() => setRegister(true)}>Kirish</button>
+          {phone.length ? (
+            <button>{phone}</button>
+          ) : (
+            <button onClick={() => setRegister(true)}>Kirish</button>
+          )}
         </div>
-        <button onClick={() => setBars(!bars)} className="header_bars">
+        <button className="header_bars">
           <LiaBarsSolid />
         </button>
+        {bars && <HeaderMenu />}
       </div>
       {register && <Register setRegister={setRegister} register={register} />}
     </header>

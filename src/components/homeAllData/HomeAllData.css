@@ -164,3 +164,14 @@
 .card_btn_border button svg {
   font-size: 20px;
 }
+
+.card_btn_border .btn_cart_addet {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #eee;
+  width: 120px;
+  padding: 4px 0;
+  border-radius: 5px;
+  justify-content: center;
+}
