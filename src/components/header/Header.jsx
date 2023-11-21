@@ -7,14 +7,12 @@ import catalogData from "../../app/menuData";
 import homeData from "../../app/homeAllData";
 import Register from "../../pages/register/Register";
 import { LiaBarsSolid } from "react-icons/lia";
-import HeaderMenu from "../headerMenu/HeaderMenu";
 
 function Header() {
   let navigate = useNavigate();
   const [value, setValue] = useState("");
   const [openMenu, setOpenMenu] = useState(false);
   const [register, setRegister] = useState(false);
-  const [bars, setBars] = useState(false);
   let phone = window.localStorage.getItem("phone");
   const inputData = homeData.filter((i) =>
     i.card.filter((x) => x.type === value)
@@ -160,7 +158,6 @@ function Header() {
         <button className="header_bars">
           <LiaBarsSolid />
         </button>
-        {bars && <HeaderMenu />}
       </div>
       {register && <Register setRegister={setRegister} register={register} />}
     </header>

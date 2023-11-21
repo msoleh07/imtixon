@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Cart.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { GoTrash } from "react-icons/go";
 import { FaHeart } from "react-icons/fa6";
 import { HiOutlineXMark } from "react-icons/hi2";
@@ -11,9 +11,7 @@ import { useNavigate } from "react-router";
 function Cart() {
   const [checked, setChecked] = useState(false);
   let navigate = useNavigate();
-  const dispatch = useDispatch();
   let cartData = useSelector((s) => s.addToCart);
-  let data = cartData.find((i) => i.data);
 
   return (
     <div className="cart_page">
