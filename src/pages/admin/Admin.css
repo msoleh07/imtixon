@@ -1,0 +1,39 @@
+.admin_page {
+  width: 100%;
+  height: 100vh;
+  background: #eee;
+  padding: 10px 7%;
+}
+
+.admin_header {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #000;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2%;
+}
+
+.admin_header h2 {
+  color: #121312;
+  font-size: 17px;
+  letter-spacing: 1.2;
+}
+
+.admin_header button {
+  height: 45px;
+  padding: 0 13px;
+  border: 2px solid #fdbe1f;
+  border-radius: 5px;
+  background: #fff;
+  color: #000;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.admin_header button svg {
+  font-size: 22px;
+}

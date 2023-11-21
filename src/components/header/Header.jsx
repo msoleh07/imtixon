@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiMenu, FiSearch, FiShoppingCart } from "react-icons/fi";
 import { HiOutlineHeart, HiX } from "react-icons/hi";
 import catalogData from "../../app/menuData";
@@ -10,6 +10,7 @@ import { LiaBarsSolid } from "react-icons/lia";
 import HeaderMenu from "../headerMenu/HeaderMenu";
 
 function Header() {
+  let navigate = useNavigate();
   const [value, setValue] = useState("");
   const [openMenu, setOpenMenu] = useState(false);
   const [register, setRegister] = useState(false);
@@ -151,7 +152,7 @@ function Header() {
         </Link>
         <div className="header_register_btn">
           {phone?.length ? (
-            <button>{phone}</button>
+            <button onClick={() => navigate("/admin")}>{phone}</button>
           ) : (
             <button onClick={() => setRegister(true)}>Kirish</button>
           )}

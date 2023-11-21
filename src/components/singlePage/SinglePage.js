@@ -10,6 +10,7 @@ import { LiaTruckSolid } from "react-icons/lia";
 import { FiRefreshCw } from "react-icons/fi";
 import homeData from "../../app/homeAllData";
 import categoriaData from "../../app/categoriaData";
+import { useDispatch, useSelector } from "react-redux";
 
 function SinglePage() {
   const [catalog, setCatalog] = useState(true);
@@ -17,6 +18,15 @@ function SinglePage() {
   const data = homeData.find((i) => i.card.find((x) => x.id.toString() === id));
   const i = data.card.find((i) => i.id.toString() === id);
   const [img, setImg] = useState(0);
+  const dispatch = useDispatch();
+  let cart = useSelector((s) => s.addToCart);
+  console.log(cart);
+  const byProduct = (data) => {
+    dispatch({
+      type: "ADD_TO_CART",
+      data: data,
+    });
+  };
 
   return (
     <div className="single_page">
@@ -81,7 +91,7 @@ function SinglePage() {
               <button style={{ borderRight: "none" }}>24</button>
             </div>
             <div className="month_number_btn_container">
-              <button>
+              <button onClick={() => byProduct(i)}>
                 <FiShoppingCart /> Savatga saqlash
               </button>
               <div className="heart_btn_container">
