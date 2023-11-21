@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 function Corusel() {
   const [coruselItim, setCoruselItim] = useState(1);
-  const [img, setImg] = useState("");
+  const [img, setImg] = useState(1);
   const [links, setLinks] = useState(0);
   const [addetClass, setAddetClass] = useState(0);
   const coruselData = [
@@ -42,10 +42,13 @@ function Corusel() {
     },
   ];
 
-  //   setTimeout(() => {
-  //     setCoruselItim(coruselItim + 1);
-  //     setImg(coruselData[coruselItim].img);
-  //   }, 1000);
+  // setTimeout(() => {
+  //   if (coruselItim === 6) {
+  //     setCoruselItim(coruselItim);
+  //   }
+  //   setCoruselItim(coruselItim + 1);
+  //   setImg(coruselData[coruselItim].img);
+  // }, 1000);
 
   const addetImg = (id) => {
     setCoruselItim(coruselItim + 1);

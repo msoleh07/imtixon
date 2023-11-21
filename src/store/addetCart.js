@@ -1,21 +1,15 @@
-// import { createSlice } from "@reduxjs/toolkit";
+const addToCart = (state = [], action) => {
+  switch (action.type) {
+    case "ADD_TO_CART":
+      return (state = [...state, action.data]);
+    case "CLEAR_CART":
+      return (state = []);
+    case "REMOVE_FORM_CART":
+      return (state = state.filter((pro) => pro.id !== action.payload));
+    default: {
+      return state;
+    }
+  }
+};
 
-// export const addetCart = createSlice({
-//   name: "addetCart",
-//   initialState: JSON.parse(window.localStorage.getItem("data")) || [],
-//   reducers: {
-//     ADDET_CART: (state, action) => {
-//       let i = state.findIndex((e) => e.id === action.payload.pro.id);
-//       if (i < 0) {
-//         return (state = [...state, { ...action.payload.pro, quantity: 1 }]);
-//       } else {
-//         return (state = state.map((item, inx) =>
-//           inx === i ? { ...item, quantity: item.quantity + 1 } : item
-//         ));
-//       }
-//     },
-//   },
-// });
-
-// export const { ADDET_CART } = addetCart.actions;
-// export default addetCart.reducer;
+export default addToCart;

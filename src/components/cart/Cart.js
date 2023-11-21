@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import "./Cart.css";
-
+import { useSelector, useDispatch } from "react-redux";
 import { GoTrash } from "react-icons/go";
 import { FaHeart } from "react-icons/fa6";
 import { HiOutlineXMark } from "react-icons/hi2";
 import { LuMinus, LuPlus } from "react-icons/lu";
 import { LuChevronsUpDown } from "react-icons/lu";
+import { useNavigate } from "react-router";
 
 function Cart() {
   const [checked, setChecked] = useState(false);
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  let cartData = useSelector((s) => s.addToCart);
+  let data = cartData.find((i) => i.data);
+
   return (
     <div className="cart_page">
       <div className="cart_container">
@@ -37,64 +43,63 @@ function Cart() {
           </div>
           <div className="cart_scrol_container">
             <div className="scroll_cart_container">
-              <div className="scroll_car_bar">
-                <div className="scroll_bar_container">
-                  <div className="scroll_bar_left_img_container">
-                    <img
-                      src="https://minio.alifnasiya.uz/shop/products/QJ7Lc8k3RQMaB49WNKQMFW7ERXK9p8qx79lvq7J1.webp"
-                      alt=""
-                    />
-                    <button className="cart_img_heart_btn">
-                      <FaHeart />
-                    </button>
-                  </div>
-                  <div className="scroll_bar_right_container">
-                    <div className="scroll_bar_right_container_left_cards">
-                      <div className="title_header_container">
-                        <p>
-                          Смартфон Apple iPhone 15 Pro 128ГБ (e-sim / nano-sim),
-                          синий
-                        </p>
-                      </div>
-                      <div className="price_container">
-                        <span>
-                          narxi: <p>15 500 000 so'm</p>
-                        </span>
-                        <span>
-                          sotuvchi: <p>VIVO OFFICIAL</p>
-                        </span>
-                      </div>
-                      <div className="month_conataner">
-                        <span>Muddatli to'lov</span>
-                        <div className="month_price_container_text">
-                          <p>
-                            1 130 208
-                            <span>so'm</span>
-                            <HiOutlineXMark /> 24
-                            <span>oyga</span>
-                          </p>
-                          <LuChevronsUpDown />
+              {cartData.map((i, index) => (
+                <div key={index} className="scroll_car_bar">
+                  <div className="scroll_bar_container">
+                    <div className="scroll_bar_left_img_container">
+                      <img
+                        src="https://minio.alifnasiya.uz/shop/products/QJ7Lc8k3RQMaB49WNKQMFW7ERXK9p8qx79lvq7J1.webp"
+                        alt=""
+                      />
+                      <button className="cart_img_heart_btn">
+                        <FaHeart />
+                      </button>
+                    </div>
+                    <div className="scroll_bar_right_container">
+                      <div className="scroll_bar_right_container_left_cards">
+                        <div className="title_header_container">
+                          <p>00000</p>
+                        </div>
+                        <div className="price_container">
+                          <span>
+                            narxi: <p>11111 so'm</p>
+                          </span>
+                          <span>
+                            sotuvchi: <p>VIVO OFFICIAL</p>
+                          </span>
+                        </div>
+                        <div className="month_conataner">
+                          <span>Muddatli to'lov</span>
+                          <div className="month_price_container_text">
+                            <p>
+                              9999
+                              <span>so'm</span>
+                              <HiOutlineXMark /> 24
+                              <span>oyga</span>
+                            </p>
+                            <LuChevronsUpDown />
+                          </div>
+                        </div>
+                        <div className="price_btn_container">
+                          <button>
+                            <LuMinus />
+                          </button>
+                          <p>1</p>
+                          <button>
+                            <LuPlus />
+                          </button>
                         </div>
                       </div>
-                      <div className="price_btn_container">
+                      <div className="scroll_bar_right_container_right_cards">
+                        <input name="3" type="checkbox" />
                         <button>
-                          <LuMinus />
-                        </button>
-                        <p>1</p>
-                        <button>
-                          <LuPlus />
+                          <GoTrash /> o'chirish
                         </button>
                       </div>
-                    </div>
-                    <div className="scroll_bar_right_container_right_cards">
-                      <input name="3" type="checkbox" />
-                      <button>
-                        <GoTrash /> o'chirish
-                      </button>
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

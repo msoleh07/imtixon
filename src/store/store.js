@@ -1,8 +1,8 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import addetCart from "./addetCart";
+import { combineReducers } from "redux";
+import addToCart from "../store/addetCart";
 
-// export const store = configureStore({
-//   reducer: {
-//     addetCart,
-//   },
-// });
+const reducer = combineReducers({
+  addToCart,
+});
+
+export default reducer;
