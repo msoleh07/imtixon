@@ -7,6 +7,7 @@ import { auth } from "../../register/register";
 function Register({ setRegister, register }) {
   const [value, setValue] = useState("");
   const [number, setNumber] = useState("");
+
   JSON.stringify(localStorage.setItem("phone", number));
   const getValue = (e) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ function Register({ setRegister, register }) {
         if (code === null) {
           alert("Kodni kiriting");
         } else {
-          e.confirm(code).then((user) => setNumber(user.user.phoneNumber));
+          e.confirm(code).then((user) => setNumber(user.phoneNumber));
         }
       })
       .catch((err) => console.log(err));

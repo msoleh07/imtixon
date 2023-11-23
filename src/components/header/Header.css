@@ -306,6 +306,30 @@ header {
   color: #5c5c5c;
 }
 
+.header_shopping_container .cart_links {
+  position: relative;
+  z-index: 1;
+}
+
+.header_shopping_container .cart_links .cart_count {
+  position: absolute;
+  right: 0px;
+  top: -7px;
+  width: 17px;
+  height: 17px;
+
+  background: #f74848;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.header_shopping_container .cart_links .cart_count span {
+  color: #fff;
+}
+
 .header_shopping_container button {
   height: 45px;
   padding: 0 13px;

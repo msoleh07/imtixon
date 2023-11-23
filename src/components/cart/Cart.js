@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Cart.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { GoTrash } from "react-icons/go";
 import { FaHeart } from "react-icons/fa6";
 import { HiOutlineXMark } from "react-icons/hi2";
@@ -9,23 +9,61 @@ import { LuChevronsUpDown } from "react-icons/lu";
 import { useNavigate } from "react-router";
 
 function Cart() {
-  const [checked, setChecked] = useState(false);
+  const dispatch = useDispatch();
   let navigate = useNavigate();
   let cartData = useSelector((s) => s.addToCart);
+  const [checked, setChecked] = useState(false);
+  const [count, setCount] = useState(1);
+  const [price, setPrice] = useState("");
+  const [month, setMonth] = useState("");
+  const cartDalete = (cartId) => {
+    dispatch({
+      type: "REMOVE_FORM_CART",
+      payload: cartId,
+    });
+  };
+
+  const clearCartData = () => {
+    let s = window.confirm("Malumotlarni tozalashga rozimisiz");
+
+    if (s === true) {
+      dispatch({
+        type: "CLEAR_CART",
+      });
+    }
+  };
+
+  const [disable, setDisable] = useState(false);
+  const plus = (cartData) => {
+    if (disable === true) {
+      setDisable(false);
+    }
+    setCount(count + 1);
+    setPrice(count + cartData.cardPrice);
+    setMonth(count + cartData.cardMonthPrice);
+  };
+  const minus = (cartData) => {
+    if (count <= 2) {
+      setDisable(true);
+    }
+    setCount(count - 1);
+    setPrice(count - cartData.cardPrice);
+    setMonth(count - cartData.cardMonthPrice);
+  };
 
   return (
     <div className="cart_page">
-      {cartData ? (
+      {cartData?.length ? (
         <div className="cart_container">
           <div className="cart_left_cards">
             <div className="cart_left_header">
               <h2>
-                Savat <span>1 tovarlarni</span>
+                Savat <span>{cartData?.length} tovarlarni</span>
               </h2>
               <div className="cart_header_select">
                 {checked && (
                   <div className="select_dalete_btn">
-                    <button>
+                    <button onClick={clearCartData}>
                       <GoTrash /> tanlanganlarni o'chirish
                     </button>
                   </div>
@@ -42,14 +80,11 @@ function Cart() {
             </div>
             <div className="cart_scrol_container">
               <div className="scroll_cart_container">
-                {cartData.map((i, index) => (
+                {cartData?.map((i, index) => (
                   <div key={index} className="scroll_car_bar">
                     <div className="scroll_bar_container">
                       <div className="scroll_bar_left_img_container">
-                        <img
-                          src="https://minio.alifnasiya.uz/shop/products/QJ7Lc8k3RQMaB49WNKQMFW7ERXK9p8qx79lvq7J1.webp"
-                          alt=""
-                        />
+                        <img src={i.cardImg[0]} alt="" />
                         <button className="cart_img_heart_btn">
                           <FaHeart />
                         </button>
@@ -57,11 +92,11 @@ function Cart() {
                       <div className="scroll_bar_right_container">
                         <div className="scroll_bar_right_container_left_cards">
                           <div className="title_header_container">
-                            <p>00000</p>
+                            <p>{i.cardTitle}</p>
                           </div>
                           <div className="price_container">
                             <span>
-                              narxi: <p>11111 so'm</p>
+                              narxi: <p>{price.length ? price : i.cardPrice}</p>
                             </span>
                             <span>
                               sotuvchi: <p>VIVO OFFICIAL</p>
@@ -71,7 +106,7 @@ function Cart() {
                             <span>Muddatli to'lov</span>
                             <div className="month_price_container_text">
                               <p>
-                                9999
+                                {month.length ? month : i.cardMonthPrice}
                                 <span>so'm</span>
                                 <HiOutlineXMark /> 24
                                 <span>oyga</span>
@@ -80,18 +115,22 @@ function Cart() {
                             </div>
                           </div>
                           <div className="price_btn_container">
-                            <button>
+                            <button
+                              disabled={disable}
+                              onClick={() => minus(i)}
+                              className={disable ? "disable" : ""}
+                            >
                               <LuMinus />
                             </button>
-                            <p>1</p>
-                            <button>
+                            <p>{count}</p>
+                            <button onClick={() => plus(i)}>
                               <LuPlus />
                             </button>
                           </div>
                         </div>
                         <div className="scroll_bar_right_container_right_cards">
                           <input name="3" type="checkbox" />
-                          <button>
+                          <button onClick={() => cartDalete(i.id)}>
                             <GoTrash /> o'chirish
                           </button>
                         </div>

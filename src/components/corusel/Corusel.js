@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 function Corusel() {
   const [coruselItim, setCoruselItim] = useState(1);
-  const [img, setImg] = useState(1);
+  const [img, setImg] = useState(konditsaner);
   const [links, setLinks] = useState(0);
   const [addetClass, setAddetClass] = useState(0);
   const coruselData = [
@@ -51,10 +51,11 @@ function Corusel() {
   // }, 1000);
 
   const addetImg = (id) => {
-    setCoruselItim(coruselItim + 1);
     setImg(coruselData[coruselItim].img);
+    setCoruselItim(coruselItim + 1);
     setLinks(coruselData[coruselItim].coruselLink);
   };
+  console.log(img);
 
   const removImg = (id) => {
     setCoruselItim(coruselItim - 1);

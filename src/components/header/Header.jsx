@@ -7,8 +7,10 @@ import catalogData from "../../app/menuData";
 import homeData from "../../app/homeAllData";
 import Register from "../../pages/register/Register";
 import { LiaBarsSolid } from "react-icons/lia";
+import { useSelector } from "react-redux";
 
 function Header() {
+  let cartCount = useSelector((s) => s.addToCart);
   let navigate = useNavigate();
   const [value, setValue] = useState("");
   const [openMenu, setOpenMenu] = useState(false);
@@ -140,7 +142,13 @@ function Header() {
         ""
       )}
       <div className="header_shopping_container">
-        <Link to={"/cart"}>
+        <Link className="cart_links" to={"/cart"}>
+          <div
+            style={{ display: cartCount.length ? "flex" : "none" }}
+            className="cart_count"
+          >
+            <span>{cartCount.length}</span>
+          </div>
           <FiShoppingCart />
           <span>Savat</span>
         </Link>

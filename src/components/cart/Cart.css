@@ -125,7 +125,7 @@
 }
 
 .scroll_bar_left_img_container img {
-  width: 100%;
+  width: 85%;
   height: 35%;
   object-fit: contain;
 }
@@ -255,6 +255,10 @@
 .price_btn_container button svg {
   font-size: 20px;
   color: #333;
+}
+
+.price_btn_container .disable svg {
+  color: #dddada;
 }
 
 .price_btn_container p {
