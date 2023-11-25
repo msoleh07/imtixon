@@ -6,15 +6,18 @@ import { HiOutlineHeart, HiX } from "react-icons/hi";
 import catalogData from "../../app/menuData";
 import homeData from "../../app/homeAllData";
 import Register from "../../pages/register/Register";
+import HeaderMenu from "../headerMenu/HeaderMenu";
 import { LiaBarsSolid } from "react-icons/lia";
 import { useSelector } from "react-redux";
 
 function Header() {
   let cartCount = useSelector((s) => s.addToCart);
   let navigate = useNavigate();
+
   const [value, setValue] = useState("");
   const [openMenu, setOpenMenu] = useState(false);
   const [register, setRegister] = useState(false);
+  const [bars, setBars] = useState(false);
   let phone = window.localStorage.getItem("phone");
   const inputData = homeData.filter((i) =>
     i.card.filter((x) => x.type === value)
@@ -26,6 +29,9 @@ function Header() {
     ? (document.body.style.overflow = "hidden")
     : (document.body.style.overflow = "auto");
   register
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "auto");
+  bars
     ? (document.body.style.overflow = "hidden")
     : (document.body.style.overflow = "auto");
 
@@ -163,9 +169,12 @@ function Header() {
             <button onClick={() => setRegister(true)}>Kirish</button>
           )}
         </div>
-        <button className="header_bars">
+      </div>
+      <div className="bars_container">
+        <button onClick={() => setBars(true)} className="header_bars">
           <LiaBarsSolid />
         </button>
+        {bars && <HeaderMenu setBars={setBars} />}
       </div>
       {register && <Register setRegister={setRegister} register={register} />}
     </header>

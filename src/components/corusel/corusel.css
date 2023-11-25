@@ -61,7 +61,6 @@
   background: #000;
 }
 
-.corusel_btn button,
 .corusel_btn button {
   width: 40px;
   height: 40px;
@@ -79,4 +78,51 @@
 .corusel_btn button:hover svg,
 .corusel_btn button:hover svg {
   color: #fdbe1f;
+}
+
+/* media */
+
+@media (max-width: 1370px) {
+  .corusel_page {
+    height: auto;
+    flex: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .corusel_img a {
+    width: 100%;
+    height: 90%;
+  }
+
+  .corusel_btn {
+    height: 60px;
+  }
+
+  .corusel_btn .btn_corusel {
+    height: 30px;
+    height: 30px;
+    padding: 0;
+  }
+
+  .corusel_btn .btn_corusel svg {
+    font-size: 10px;
+  }
+
+  .btn_select > .none_selec {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+@media (max-width: 800px) {
+  .corusel_btn {
+    height: 50px;
+  }
+  .corusel_btn .btn_corusel {
+    height: auto;
+    height: auto;
+    padding: 0;
+    background: transparent;
+  }
 }

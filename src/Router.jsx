@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Admin from "./pages/admin/Admin";
+import Register from "./pages/register/Register";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />}>
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="/single-page/:id" element={<SinglePage />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/admin" element={<Admin />} />
+      <Route path="/register" element={<Register />} />
     </Route>
   )
 );

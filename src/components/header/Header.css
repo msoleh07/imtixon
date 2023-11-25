@@ -317,7 +317,6 @@ header {
   top: -7px;
   width: 17px;
   height: 17px;
-
   background: #f74848;
   border-radius: 50%;
   display: flex;
@@ -350,9 +349,23 @@ header {
   display: none;
 }
 
-/* header_register_btn */
+.bars_container button {
+  border: none;
+  background: transparent;
+  width: auto;
+  height: auto;
+}
 
-/* madia */
+.header_searchbar {
+  position: relative;
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 @media (max-width: 1435px) {
   .header_input_container {
@@ -365,6 +378,8 @@ header {
     flex: 1;
     padding: 5px;
   }
+
+  .bars_container button svg,
   .header_input_container button svg,
   .header_catalog_btn button svg,
   .header_shopping_container a svg {
@@ -374,6 +389,7 @@ header {
   .header_catalog_btn button {
     font-size: 13px;
   }
+  .bars_container button,
   .header_catalog_btn button,
   .header_input_container,
   .header_shopping_container button {
@@ -407,45 +423,73 @@ header {
   }
 }
 
-.header_searchbar {
-  position: relative;
-  flex: 1;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  height: 37px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+@media (max-width: 700px) {
+  .header_shopping_container {
+    display: none;
+  }
+  .header_input_container {
+    display: flex;
+  }
+  .search_container {
+    left: 200px;
+    width: 360px;
+  }
 }
 
-.header_searchbar input {
-  text-indent: 10px;
-  flex: 1;
-  border: none;
-  outline: none;
-  font-size: 17px;
-  font-family: "Inter", sans-serif;
+@media (max-width: 640px) {
+  .search_container {
+    width: 310px;
+  }
 }
 
-.header_searchbar > button {
-  padding: 0 25px;
-  height: 100%;
-  border: none;
-  background-color: #f8f8f8;
-  font-size: 20px;
+@media (max-width: 600px) {
+  header {
+    padding: 0 4%;
+    height: 65px;
+  }
+  .header_logo a img {
+    width: 40px;
+  }
+  .header_input_container {
+    height: 30px;
+  }
+
+  .header_input_container button svg {
+    font-size: 15px;
+  }
+  .search_container {
+    left: 170px;
+    bottom: -340px;
+  }
 }
 
-.header_searchbar .searchResult {
-  width: 100%;
-  border-radius: 3px;
-  /* height: 200px; */
-  background-color: #fff;
-  box-shadow: 0 10px 10px #666;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  z-index: 999;
-  flex-direction: column;
-  gap: 5px;
-  padding: 10px;
+@media (max-width: 540px) {
+  .search_scroll_bar .search_scroll_bar_ul_text .search_scroll_bar_li_text {
+    height: 30px;
+    padding: 0 5px;
+  }
+  .search_scroll_bar .search_scroll_bar_ul_text .search_scroll_bar_li_text a {
+    font-size: 12px;
+  }
+
+  .search_container {
+    width: 270px;
+  }
+}
+
+@media (max-width: 495px) {
+  .search_container {
+    width: 200px;
+  }
+  .search_scroll_bar .search_scroll_bar_ul_text .search_scroll_bar_li_text {
+    height: auto;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 425px) {
+  .header_input_container,
+  .search_container {
+    display: none;
+  }
 }

@@ -3,11 +3,14 @@ import "./Register.css";
 import { HiXMark } from "react-icons/hi2";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { auth } from "../../register/register";
+import { useLocation, useNavigate } from "react-router";
+import { IoHomeOutline } from "react-icons/io5";
 
 function Register({ setRegister, register }) {
   const [value, setValue] = useState("");
   const [number, setNumber] = useState("");
-
+  let location = useLocation();
+  let navigate = useNavigate();
   JSON.stringify(localStorage.setItem("phone", number));
   const getValue = (e) => {
     e.preventDefault();
@@ -33,7 +36,17 @@ function Register({ setRegister, register }) {
       <div className="form_container">
         <div className="form_header">
           <h2>Avtorizatsiya alif shop</h2>
-          <button onClick={() => setRegister(false)}>
+
+          <button
+            onClick={() => navigate("/")}
+            className="register_icon_home_btn"
+          >
+            <IoHomeOutline />
+          </button>
+          <button
+            onClick={() => setRegister(false)}
+            className="register_close_btn"
+          >
             <HiXMark />
           </button>
         </div>
@@ -49,6 +62,9 @@ function Register({ setRegister, register }) {
           </div>
           <button className="cart_btn_one">Davom etish</button>
           <button onClick={() => setRegister(false)} className="cart_btn_two">
+            Bekor qilish
+          </button>
+          <button onClick={() => navigate("/")} className="cart_btn_three">
             Bekor qilish
           </button>
           <div id="recaptcha-container"></div>

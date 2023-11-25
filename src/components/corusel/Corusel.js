@@ -55,7 +55,6 @@ function Corusel() {
     setCoruselItim(coruselItim + 1);
     setLinks(coruselData[coruselItim].coruselLink);
   };
-  console.log(img);
 
   const removImg = (id) => {
     setCoruselItim(coruselItim - 1);
@@ -77,7 +76,7 @@ function Corusel() {
         </Link>
       </div>
       <div className="corusel_btn">
-        <button onClick={() => removImg()}>
+        <button className="btn_corusel" onClick={() => removImg()}>
           <SlArrowLeft />
         </button>
         <div className="btn_select">
@@ -89,7 +88,7 @@ function Corusel() {
             ></button>
           ))}
         </div>
-        <button onClick={() => addetImg()}>
+        <button className="btn_corusel" onClick={() => addetImg()}>
           <SlArrowRight />
         </button>
       </div>

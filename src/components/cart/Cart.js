@@ -7,6 +7,7 @@ import { HiOutlineXMark } from "react-icons/hi2";
 import { LuMinus, LuPlus } from "react-icons/lu";
 import { LuChevronsUpDown } from "react-icons/lu";
 import { useNavigate } from "react-router";
+import { Add_To_Cart_Btn } from "../../store/addToCartBtn";
 
 function Cart() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function Cart() {
   const cartDalete = (cartId) => {
     dispatch({
       type: "REMOVE_FORM_CART",
-      payload: cartId,
+      payload: cartId.id,
     });
   };
 
@@ -30,6 +31,17 @@ function Cart() {
       dispatch({
         type: "CLEAR_CART",
       });
+    }
+  };
+
+  const purchase = () => {
+    let s = window.confirm("Sotib olishga rozimisiz");
+
+    if (s === true) {
+      dispatch({
+        type: "CLEAR_CART",
+      });
+      dispatch(Add_To_Cart_Btn({ pro: cartData }));
     }
   };
 
@@ -64,7 +76,7 @@ function Cart() {
                 {checked && (
                   <div className="select_dalete_btn">
                     <button onClick={clearCartData}>
-                      <GoTrash /> tanlanganlarni o'chirish
+                      <GoTrash /> <span>tanlanganlarni o'chirish</span>
                     </button>
                   </div>
                 )}
@@ -130,7 +142,7 @@ function Cart() {
                         </div>
                         <div className="scroll_bar_right_container_right_cards">
                           <input name="3" type="checkbox" />
-                          <button onClick={() => cartDalete(i.id)}>
+                          <button onClick={() => cartDalete(i)}>
                             <GoTrash /> o'chirish
                           </button>
                         </div>
@@ -168,7 +180,7 @@ function Cart() {
                 <button className="cart_btn_one">
                   Muddatli to'lovga olish
                 </button>
-                <button className="cart_btn_two">
+                <button onClick={purchase} className="cart_btn_two">
                   Karta orqali sotib olish
                 </button>
               </div>

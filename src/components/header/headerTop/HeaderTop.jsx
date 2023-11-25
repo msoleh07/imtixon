@@ -43,8 +43,8 @@ function HeaderTop() {
       </div>
       <div className="header_top_links_border">
         <Link className="right_line">Namoz vaqti</Link>
-        <Link>alif shopda soting!</Link>
-        <Link>Bizga yozing</Link>
+        <Link className="header_top_link">alif shopda soting!</Link>
+        <Link className="header_top_link">Bizga yozing</Link>
       </div>
     </div>
   );

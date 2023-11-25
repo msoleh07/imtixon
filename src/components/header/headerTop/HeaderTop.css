@@ -39,7 +39,6 @@
   bottom: -110px;
   left: 0px;
   overflow: hidden;
-  z-index: 1;
   box-shadow: 0 0 3px #a5b1bb;
 }
 
@@ -98,4 +97,23 @@
 .right_line {
   border-right: 1px solid #5c6774;
   padding-right: 15px;
+}
+
+/* media */
+
+@media (max-width: 600px) {
+  .header_top {
+    padding: 0 4%;
+  }
+}
+
+@media (max-width: 550px) {
+  .header_top_link {
+    display: none;
+  }
+
+  .right_line {
+    padding: 0;
+    border: none;
+  }
 }

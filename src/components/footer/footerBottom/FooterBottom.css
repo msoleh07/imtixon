@@ -86,6 +86,9 @@
 
   .footer_top_item_brend_button {
     display: block;
+    height: 45px;
+    border: none;
+    width: 270px;
   }
 }
 
@@ -110,5 +113,11 @@
 
   .footer_top_page > img {
     width: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer_top_components {
+    padding: 0 4%;
   }
 }

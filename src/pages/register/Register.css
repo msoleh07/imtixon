@@ -8,6 +8,7 @@
   position: absolute;
   top: -40px;
   left: 0;
+  z-index: 100000;
 }
 
 .form_container {
@@ -41,6 +42,10 @@
 .form_header button svg {
   font-size: 25px;
   color: #a5b1bb;
+}
+
+.form_header .register_icon_home_btn {
+  display: none;
 }
 
 .form_container form {
@@ -97,4 +102,30 @@
 
 .form_container form .cart_btn_two:hover {
   background: #f3f6f7;
+}
+
+.form_container form .cart_btn_three {
+  display: none;
+}
+
+.form_container form .cart_btn_three:hover {
+  background: #f3f6f7;
+}
+
+@media (max-width: 700px) {
+  .form_header .register_icon_home_btn {
+    display: block;
+  }
+
+  .form_header .register_close_btn {
+    display: none;
+  }
+
+  .form_container form .cart_btn_two {
+    display: none;
+  }
+
+  .form_container form .cart_btn_three {
+    display: block;
+  }
 }
